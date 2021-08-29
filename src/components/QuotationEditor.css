@@ -60,3 +60,7 @@ a.btn:hover {
 .label {
   margin-right: 50px;
 }
+a[disabled] {
+  /* color: gray;
+  pointer-events: none; */
+}

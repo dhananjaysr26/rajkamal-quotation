@@ -16,16 +16,10 @@
   font-size: 35px;
   font-weight: 600;
 }
-a {
-  text-decoration: none;
-}
-a.btn {
+.btn {
   margin-right: 2em;
-  margin-top: 20em;
-  padding: 0.3em 1.2em;
   border: 0.16em solid rgba(255, 255, 255, 0);
   border-radius: 2em;
-  text-decoration: none;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   color: #ffffff;
@@ -33,14 +27,16 @@ a.btn {
   text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
   text-align: center;
   transition: all 0.2s;
-  height: 5em;
-  width: 10em;
+  width: 9rem;
+  height: 2rem;
+  cursor: pointer;
 }
-a.btn:hover {
+.btn:hover {
   border-color: rgba(255, 255, 255, 1);
+  color: black;
 }
 @media all and (max-width: 30em) {
-   a.button4 {
+   .btn {
     display: block;
     margin: 0.2em auto;
   }
