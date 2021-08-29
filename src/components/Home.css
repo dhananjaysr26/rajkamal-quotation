@@ -45,3 +45,6 @@ a.btn:hover {
     margin: 0.2em auto;
   }
 }
+.btn-box {
+  margin-top: 2rem;
+}
