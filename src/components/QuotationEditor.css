@@ -63,4 +63,5 @@ a.btn:hover {
 a[disabled] {
   /* color: gray;
   pointer-events: none; */
+  text-decoration: none;
 }

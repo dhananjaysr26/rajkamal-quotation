@@ -104,7 +104,7 @@ function QuotationEditor(props) {
   return (
     <div>
       <form>
-        <h1 className="editor">Quotation Editor</h1>
+        <h1 className="editor">Tentative Quotation</h1>
         <h2 className="amount">
           Amount:<span className="amountNumber">{Amt} ₹</span>
         </h2>
@@ -166,7 +166,7 @@ function QuotationEditor(props) {
 
           <div className="selectBox">
             <label className="label" for="Cunstomer">
-              Cunstomer Type:
+              Customer Type:
             </label>
             <input type="radio" name="cust-type" value="Regular" onChange={custChange} />Regular
             <input type="radio" name="cust-type" value="OneTime" onChange={custChange} />One Time
