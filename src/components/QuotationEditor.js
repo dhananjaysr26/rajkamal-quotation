@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./QuotationEditor.css";
-
+import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 function QuotationEditor(props) {
   //getting props
   var Qid = props.location.state;
@@ -102,82 +102,118 @@ function QuotationEditor(props) {
   }
 
   return (
-    <div>
-      <form>
-        <h1 className="editor">Tentative Quotation</h1>
-        <h2 className="amount">
-          Amount:<span className="amountNumber">{Amt} ₹</span>
-        </h2>
-        <div className="form-content">
-          <div className="display">
-            <div className="flexName">
-              Name:
-              <input type="text" />
-            </div>
-            <div className="flexQ">Quotation Id:{Qid}</div>
-          </div>
-          <div className="selectBox">
-            <label className="label" for="type">
-              Type:
-            </label>
-            <select name="type" id="select-type" onChange={typeChange}>
-              <option value="0">-Select-</option>
-              <option value="Bar">Bar</option>
-              <option value="Label1">Label1</option>
-              <option value="Label2">Label2</option>
-              <option value="Label3">Label3</option>
-            </select>
-          </div>
-          <div className="selectBox">
-            <label className="label" for="Size">
-              Size:
-            </label>
-            <select name="Size" id="select-size" onChange={sizeChange}>
-              <option value="0">-Select-</option>
-              <option value="Size1">Size1</option>
-              <option value="Size2">Size2</option>
-              <option value="Size3">Size3</option>
-              <option value="Size4">Size4</option>
-            </select>
-          </div>
-          <div className="selectBox">
-            <label className="label" for="paper">
-              Paper:
-            </label>
-            <select name="paper" id="select-paper" onChange={paperChange}>
-              <option value="0">-Select-</option>
-              <option value="Normal">Normal</option>
-              <option value="Paper-1">Paper-1</option>
-              <option value="Paper-2">Paper-2</option>
-              <option value="Paper-3">Paper-3</option>
-            </select>
-          </div>
+    <div className="container">
+      <h1 className="text-center">Online Quote Request Form</h1>
+      <p className="text-center">Fields marked with an * are required</p>
+      <div className="mb-3">
+        <label for="ip1" className="form-label required" required>Email address</label>
+        <input type="email" className="form-control" id="ip1" placeholder="name@example.com" required />
+      </div>
+      <div className="mb-3">
+        <label for="ip2" className="form-label">Company</label>
+        <input type="email" className="form-control" id="ip2" placeholder="Company Name" />
+      </div>
+      <div className="mb-3">
+        <label for="ip3" className="form-label">Address</label>
+        <input type="email" className="form-control" id="ip3" placeholder="Enter your Address" />
+      </div>
+      <div className="mb-3">
+        <label for="ip4" className="form-label">City</label>
+        <input type="email" className="form-control" id="ip4" placeholder="Enter Your City" />
+      </div>
+      <div className="mb-3">
+        <label for="ip5" className="form-label">State</label>
+        <input type="email" className="form-control" id="ip5" placeholder="Enter Your State" />
+      </div>
+      <div className="mb-3">
+        <label for="ip6" className="form-label">PinCode</label>
+        <input type="email" className="form-control" id="ip6" placeholder="Enter Your Pincode" />
+      </div>
+      <div className="mb-3">
+        <label for="ip7" className="form-label">Email</label>
+        <input type="email" className="form-control" id="ip7" placeholder="Enter Your Email" />
+      </div>
+      <label for="radio1" className="form-label">I am</label>
+      <div className="form-check">
+        <input className="form-check-input" type="radio" name="radio1" id="radio1" />
+        <label className="form-check-label" for="radio1">Broker</label>
+      </div>
+      <div class="form-check">
+        <input className="form-check-input" type="radio" name="radio1" id="radio2" />
+        <label className="form-check-label" for="radio2"> Commercial Printer</label>
+      </div>
+      <div class="form-check">
+        <input className="form-check-input" type="radio" name="radio1" id="radio3" />
+        <label className="form-check-label" for="radio3"> Graphic Designer</label>
+      </div>
+      <div class="form-check">
+        <input className="form-check-input" type="radio" name="radio1" id="radio4" />
+        <label className="form-check-label" for="radio4"> Advertising Agency</label>
+      </div>
+      <div class="form-check">
+        <input className="form-check-input" type="radio" name="radio1" id="radio5" />
+        <label className="form-check-label" for="radio5"> Other</label>
+      </div>
 
-          <div className="selectBox">
-            <label className="label" for="ink">
-              Ink:
-            </label>
-            <select name="ink" id="select-ink" onChange={inkChange}>
-              <option value="0">-Select-</option>
-              <option value="Ink-1">Ink1</option>
-              <option value="Ink-2">Ink2</option>
-            </select>
-          </div>
-
-          <div className="selectBox">
-            <label className="label" for="Cunstomer">
-              Customer Type:
-            </label>
-            <input type="radio" name="cust-type" value="Regular" onChange={custChange} />Regular
-            <input type="radio" name="cust-type" value="OneTime" onChange={custChange} />One Time
-          </div>
-          <div className="button">
-            <a href="#" className="btn" onClick={() => { alert("Quotation Pdf will Download!") }} disabled>
-              Generate Quotation
-            </a>
-          </div>
-        </div>
-      </form>
+      <div className="mb-3">
+        <label for="ip8" className="form-label">Quantities</label>
+        <input type="email" className="form-control" id="ip8" placeholder="Enter Your Quantity" />
+      </div>
+      <select class="form-select" aria-label="Default select example">
+        <label for="ip12" className="form-label">Label Size</label>
+        <option value="0">-Select-</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+      <select class="form-select" aria-label="Default select example">
+        <label for="ip13" className="form-label">Label Width (inches) </label>
+        <option value="0">-Select-</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+      <div className="mb-3">
+        <label for="ip9" className="form-label">Number of Colors</label>
+        <input type="email" className="form-control" id="ip9" placeholder="colours count" />
+      </div>
+      <select class="form-select" aria-label="Default select example">
+        <label for="ip14" className="form-label">Specific Ink Colours </label>
+        <option value="0">-Select-</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+      <select class="form-select" aria-label="Default select example">
+        <label for="ip14" className="form-label">Label Stock  </label>
+        <option value="0">-Select-</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+      <label for="radio1" className="form-label">Lamination</label>
+      <div className="form-check">
+        <input className="form-check-input" type="radio" name="radio2" id="radio1" />
+        <label className="form-check-label" for="radio1">Yes</label>
+      </div>
+      <div class="form-check">
+        <input className="form-check-input" type="radio" name="radio2" id="radio2" />
+        <label className="form-check-label" for="radio2"> No</label>
+      </div>
+      <label for="radio1" className="form-label">Environment</label>
+      <div className="form-check">
+        <input className="form-check-input" type="radio" name="radio3" id="radio1" />
+        <label className="form-check-label" for="radio1">Indoor</label>
+      </div>
+      <div class="form-check">
+        <input className="form-check-input" type="radio" name="radio3" id="radio2" />
+        <label className="form-check-label" for="radio2">Outdoor</label>
+      </div>
+      <div class="mb-3">
+        <label for="textarea" class="form-label">Special Instructions</label>
+        <textarea class="form-control" id="textarea" rows="3"></textarea>
+      </div>
+      <button className="btn btn-info">Submit</button>
     </div>
   );
 }

@@ -16,20 +16,9 @@
   font-size: 35px;
   font-weight: 600;
 }
-.btn {
-  margin-right: 2em;
-  border: 0.16em solid rgba(255, 255, 255, 0);
-  border-radius: 2em;
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
-  color: #ffffff;
-  background-color: #9a4ef1;
-  text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
-  text-align: center;
-  transition: all 0.2s;
-  width: 9rem;
-  height: 2rem;
-  cursor: pointer;
+ .btn {
+  display: block;
+  margin-right: 2em auto;
 }
 .btn:hover {
   border-color: rgba(255, 255, 255, 1);
