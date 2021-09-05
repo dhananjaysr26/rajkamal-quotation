@@ -13,24 +13,88 @@
   font-weight: 700;
 }
 .content p {
-  font-size: 35px;
-  font-weight: 600;
+  font-size: 30px;
+  font-weight: 500;
 }
- .home-btn {
-  display: block;
-  margin-right: 2em auto;
+.homeBtn {
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.16em solid rgba(255, 255, 255, 0);
+  border-radius: 1.5em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  text-shadow: 0 0.04em 0.04em rgb(0 0 0 / 35%);
+  text-align: center;
+  transition: all 0.2s;
+  background-color: #4e9af1;
+  margin-bottom: 50px;
 }
-.home-btn:hover {
+.homeBtn:hover {
   border-color: rgba(255, 255, 255, 1);
   color: black;
 }
-@media all and (max-width: 960px) {
-   .home-btn {
-    display: block;
-    margin: 0.2em auto;
-    margin: 10rem;
+.homeBtn-box {
+  margin-top: 2rem;
+}
+/* Animation */
+.bouncy {
+  animation: bouncy 5s infinite linear;
+  position: relative;
+}
+.type {
+  display: inline-flex;
+}
+
+.type span {
+  word-break: break-all;
+  height: 1.2em;
+  width: 0%;
+  overflow: hidden;
+  animation: t 2s linear infinite alternate;
+  color: #f58442;
+}
+.type span:before {
+  content: " ";
+  display: inline-block;
+}
+
+@keyframes t {
+  90%,
+  100% {
+    width: 100%;
   }
 }
-.home-btn-box {
-  margin-top: 2rem;
+
+@keyframes bouncy {
+  0% {
+    top: 0em;
+  }
+  40% {
+    top: 0em;
+  }
+  43% {
+    top: -0.9em;
+  }
+  46% {
+    top: 0em;
+  }
+  48% {
+    top: -0.4em;
+  }
+  50% {
+    top: 0em;
+  }
+  100% {
+    top: 0em;
+  }
+}
+@media all and (max-width: 300px) {
+  .homeBtn {
+    display: block;
+    margin: 0.2em auto;
+  }
 }

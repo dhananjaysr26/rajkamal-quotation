@@ -10,17 +10,22 @@ body {
 .navBar {
   height: 80px;
   width: 100%;
-  background: #34495e;
+  background: rgb(9, 121, 105);
+  background: linear-gradient(
+    90deg,
+    rgba(9, 121, 105, 1) 35%,
+    rgba(0, 155, 255, 1) 100%
+  );
 }
-label.logo {
-  font-size: 20px;
+.logo {
+  font-size: 30px;
   font-weight: bold;
   color: white;
   line-height: 80px;
   justify-content: center;
   padding-left: 20px;
 }
-li,
+.navBar li,
 a,
 button {
   font-family: "Montserrate", sans-serif;
@@ -55,40 +60,53 @@ a:hover {
   border: 1px solid white;
   transition: 0.5s;
 }
-button {
+.nav__links button {
   padding: 9px 25px;
-  background-color: skyblue;
+  background: rgb(9, 107, 121);
+  background: linear-gradient(
+    90deg,
+    rgba(9, 107, 121, 0.6979166666666667) 35%,
+    rgba(255, 124, 0, 0.4682247899159664) 100%
+  );
   border: none;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease 0s;
 }
-button:hover {
-  background-color: slateblue;
+.nav__links button:hover {
+  background: rgb(9, 107, 121);
+  background: linear-gradient(
+    90deg,
+    rgba(9, 107, 121, 1) 35%,
+    rgba(255, 124, 0, 1) 100%
+  );
 }
-nav #menuIcon {
+.navBar #menuIcon {
   color: white;
   font-size: 30px;
-  line-height: 80px;
   float: right;
   margin-right: 40px;
+  line-height: 80px;
   cursor: pointer;
   display: none;
 }
 @media (max-width: 1048px) {
-  label.log {
-    font-size: 32px;
-    padding-left: 60px;
+  .logo {
+    font-size: 25px;
+    padding-left: 20px;
   }
   .nav__links {
     margin-right: 20px;
   }
-  nav a {
+  .nav__links a {
     font-size: 17px;
   }
 }
 @media (max-width: 960px) {
-  nav #menuIcon {
+  .logo {
+    font-size: 20px;
+  }
+  .navBar #menuIcon {
     display: block;
   }
   .nav__links {
@@ -103,7 +121,12 @@ nav #menuIcon {
     transition: all 0.5s ease;
     opacity: 1;
     left: 0;
-    background: #2f3640;
+    background: rgb(9, 121, 105);
+    background: radial-gradient(
+      circle,
+      rgba(9, 121, 105, 1) 35%,
+      rgba(0, 155, 255, 1) 100%
+    );
   }
   .nav__links li {
     display: block;
