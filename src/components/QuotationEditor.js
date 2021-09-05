@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./QuotationEditor.css";
-import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 function QuotationEditor(props) {
   //getting props
   var Qid = props.location.state;

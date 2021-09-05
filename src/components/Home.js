@@ -3,7 +3,6 @@ import "./Home.css";
 import { Link } from "react-router-dom";
 import logoPic from "./../img/logo.png";
 import { useHistory } from "react-router-dom";
-import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 function Home() {
     let history = useHistory();
     function editQuotationBtn() {
@@ -18,17 +17,16 @@ function Home() {
     return (
         <div className="container">
             <div className="content">
-
                 <img src={logoPic} alt="" />
 
                 <div className="title">Welcome To Rajkamal Barscan</div>
                 <p>Get Your Quotation Now!</p>
-                <div className="btn-box">
-                    <button className="btn btn-primary" type="submit" onClick={editQuotationBtn}>Edit Quotation</button>
+                <div className="home-btn-box">
+                    <button className="home-btn" type="submit" onClick={editQuotationBtn}>Edit Quotation</button>
 
 
                     <Link to="/quotation-editor">
-                        <button className="btn btn-danger m-2" type="submit">
+                        <button className="home-btn " type="submit">
                             Create Quotation
                         </button>
                     </Link>

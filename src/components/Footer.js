@@ -1,6 +1,5 @@
 import React from 'react';
-import "./Footer.css"
-import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "./Footer.css";
 function Footer() {
     return (
         <div className="container">
