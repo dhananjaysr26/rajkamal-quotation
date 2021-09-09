@@ -27,7 +27,7 @@ function Home() {
 
 
                 <Link to="/quotation-editor">
-                    <button className="homeBtn bouncy" style={{ backgroundColor: "#f58442", animationDelay: "0.07s" }} type="submit">
+                    <button className="homeBtn bouncy" style={{ backgroundColor: "#f58442", animationDelay: "0.14s" }} type="submit">
                         Create Quotation
                     </button>
                 </Link>
@@ -35,7 +35,7 @@ function Home() {
             </div>
             <section class="portfolio-experiment">
                 <Link to="/quotation-editor">
-                    <span class="text">Learn More!</span>
+                    <span class="text">Know More!</span>
                     <span class="line -right"></span>
                     <span class="line -top"></span>
                     <span class="line -left"></span>

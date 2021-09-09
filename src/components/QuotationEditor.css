@@ -1,0 +1,257 @@
+.total-container {
+  float: right;
+  margin-right: 10px;
+}
+.total-register {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+  color: red;
+  padding: 5px;
+  text-align: center;
+}
+.total_value {
+  color: yellow !important;
+  display: inline-block;
+  margin-left: 10px;
+}
+.total_var {
+  display: inline-block;
+}
+.container {
+  width: 68%;
+  float: left;
+  margin: 1px auto 1px auto;
+  display: flex;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 100px;
+}
+.hint-container {
+  width: 28%;
+  float: right;
+  margin: 1px auto 1px auto;
+  display: flex;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.form-heading {
+  text-align: center;
+  padding: 20px;
+  padding-right: 25%;
+
+  font-family: sans-serif;
+}
+.register {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+.hint-register {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.myform {
+  margin: 40px;
+}
+.head-box {
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 2 0px;
+  padding-bottom: 10px;
+}
+.form-hint {
+  text-align: center;
+
+  padding-right: 25%;
+
+  font-family: sans-serif;
+}
+.Q-form-label {
+  font-family: sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+.form-label {
+  font-family: sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+.required:after {
+  content: " *";
+  color: red;
+}
+.form-input {
+  width: 90%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: 0;
+  padding: 7px;
+  background-color: #fff;
+  box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+.Q-form-input {
+  outline: none;
+  width: 70px;
+  border: 1px solid #ddd;
+  margin-left: 10px;
+  border-radius: 4px;
+  padding: 7px;
+  font-size: large;
+  font-weight: 700;
+  background-color: #fff;
+  box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+.form-select {
+  width: 92%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: 0;
+  padding: 7px;
+  background-color: #fff;
+  box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+.form-element {
+  margin-bottom: 1rem;
+}
+.form-radio-margin {
+  margin-top: 5px;
+}
+.submitBtn {
+  padding: 0.3em 1.2em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.16em solid rgba(255, 255, 255, 0);
+  border-radius: 1.5em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  text-shadow: 0 0.04em 0.04em rgb(0 0 0 / 35%);
+  transition: all 0.2s;
+  background-color: #4e9af1;
+  margin-bottom: 50px;
+  justify-content: center;
+  cursor: pointer;
+}
+.submitBtn:hover {
+  border-color: rgba(255, 255, 255, 1);
+  color: black;
+}
+.submitBtn-box {
+  margin-top: 2rem;
+}
+.hint-register h1 {
+  margin: 10px;
+}
+.hint-register h3 {
+  margin: 15px;
+}
+.hint-register h5 {
+  margin: 20px;
+}
+.form-check {
+  display: block;
+}
+.form-radio {
+  display: inline;
+  margin-left: 30px;
+}
+.form__radio {
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+@media all and (max-width: 960px) {
+  .total-container {
+    float: none;
+  }
+  .total-register {
+    padding: 2px;
+  }
+  .form-heading {
+    font-size: 25px;
+    padding: unset;
+    padding: 10px;
+  }
+  .form-hint {
+    text-align: center;
+
+    padding-left: 10px;
+
+    font-family: sans-serif;
+  }
+  .container {
+    width: 400px;
+    margin: 1px auto 1px auto;
+    display: block;
+    margin-top: 10px;
+  }
+  .hint-container {
+    width: 400px;
+    margin: 1px auto 1px auto;
+    float: none;
+  }
+  .hint-register {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    margin: 5%;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+    color: #fff;
+  }
+  .register {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+    color: #fff;
+  }
+  .form-label {
+    font-family: sans-serif;
+    font-size: 18px;
+    font-style: italic;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .form-input {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    outline: 0;
+    padding: 7px;
+    background-color: #fff;
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.3);
+  }
+  .form-select {
+    width: 100%;
+  }
+  .form-element {
+    margin-bottom: 1rem;
+  }
+}

@@ -2,10 +2,84 @@ import React, { useState } from "react";
 import "./QuotationEditor.css";
 function QuotationEditor(props) {
   //getting props
-  var Qid = props.location.state;
-  if (!Qid) {
-    Qid = Math.floor(Math.random() * 9000);
+  // var Qid = props.location.statel
+  var Qid = 77779;
+  const initial_valueObj = {
+    quotaion_id: "",
+    email: "",
+    company: "",
+    address: "",
+    city: "",
+    state: "",
+    pincode: "",
+    user_type: "",
+    quantities: "",
+    labelShape: "",
+    label_width: "",
+    colors: "",
+    specific_ink: "",
+    label_stock: "",
+    lamination: "",
+    environment: "",
+    special_instruction: "",
+    estAmt: ""
+
   }
+  var [formvalues, setFormvalues] = useState(initial_valueObj);
+  const inputChangeHandler = e => {
+    var { name, value } = e.target;
+    setFormvalues({
+      ...formvalues, [name]: value
+    })
+
+
+  }
+  const select_LabelStock = () => {
+    let selectValue = document.getElementById("LabelStock-select").value;
+    setFormvalues({
+      ...formvalues, label_stock: selectValue
+    })
+
+  }
+  const select_InkColors = () => {
+    let selectValue = document.getElementById("Ink-select").value;
+    setFormvalues({
+      ...formvalues, colors: selectValue
+    })
+
+  }
+  const select_labelShape = () => {
+    let selectValue = document.getElementById("LabelShape-select").value;
+    setFormvalues({
+      ...formvalues, labelShape: selectValue
+    })
+
+  }
+  const select_labelWidth = () => {
+    let selectValue = document.getElementById("LabelWidth-select").value;
+    setFormvalues({
+      ...formvalues, label_width: selectValue
+    })
+
+  }
+  const submitForm = () => {
+    setFormvalues({
+      ...formvalues, quotaion_id: { Qid }
+    })
+    console.log("Helooo");
+    console.log(formvalues);
+
+    alert("Data Saved!");
+  }
+  //Radio Button
+  let IAM = ["Broker", "Commercial Printer", "Graphic Designer", "Adertising Agency", "Other"];
+  let Lamination = ["Yes", "No"];
+  let Environment = ["Indoor", "Outdoor"];
+  //select
+  let labelStock = ["One", "Two", "Three"];
+  let InkColors_list = ["Black", "Blue", "Pink"];
+  let LabelShape_list = ["Circle", "Rectangle", "Square"];
+  let LabelWidth_list = ["5x6", "6x9", "8x12", "other"];
   //amount
   let [Amt, setAmt] = useState(1000);
   // ******************************************************************************************************
@@ -80,139 +154,190 @@ function QuotationEditor(props) {
   }
   // ******************************************************************************************************
   //Customer Prize
-  let [LcustType, setLcustType] = useState(0);
-  var custDict = {
-    "Regular": 0,
-    "OneTime": 1000
-  };
-  //onSelect Amt Change
-  function custChange() {
-    let selectCust = document.querySelectorAll('input[name="cust-type"]');
-    let selectedCustType;
-    for (const SC of selectCust) {
-      if (SC.checked) {
-        selectedCustType = SC.value;
-        break;
-      }
-    }
-    setAmt(Amt + custDict[selectedCustType] - LcustType);
-    setLcustType(custDict[selectedCustType]);
+  // let [Lamination, setLamination] = useState(0);
+  // var LaminationDict = {
+  //   "Yes": 1000,
+  //   "No": 0
+  // };
+  // //onSelect Amt Change
+  // function LaminationChange() {
+  //   let selectLamination = document.querySelectorAll('input[name="lamination"]');
+  //   let selectedLaminationType;
+  //   for (const SC of selectLamination) {
+  //     if (SC.checked) {
+  //       selectedLaminationType = SC.value;
+  //       break;
+  //     }
+  //   }
+  //   setAmt(Amt + LaminationDict[selectedLaminationType] - LLaminationType);
+  //   setLLaminationType(LaminationDict[selectedLaminationType]);
 
-  }
+  // }
 
   return (
-    <div className="container">
-      <h1 className="text-center">Online Quote Request Form</h1>
-      <p className="text-center">Fields marked with an * are required</p>
-      <div className="mb-3">
-        <label for="ip1" className="form-label required" required>Email address</label>
-        <input type="email" className="form-control" id="ip1" placeholder="name@example.com" required />
-      </div>
-      <div className="mb-3">
-        <label for="ip2" className="form-label">Company</label>
-        <input type="email" className="form-control" id="ip2" placeholder="Company Name" />
-      </div>
-      <div className="mb-3">
-        <label for="ip3" className="form-label">Address</label>
-        <input type="email" className="form-control" id="ip3" placeholder="Enter your Address" />
-      </div>
-      <div className="mb-3">
-        <label for="ip4" className="form-label">City</label>
-        <input type="email" className="form-control" id="ip4" placeholder="Enter Your City" />
-      </div>
-      <div className="mb-3">
-        <label for="ip5" className="form-label">State</label>
-        <input type="email" className="form-control" id="ip5" placeholder="Enter Your State" />
-      </div>
-      <div className="mb-3">
-        <label for="ip6" className="form-label">PinCode</label>
-        <input type="email" className="form-control" id="ip6" placeholder="Enter Your Pincode" />
-      </div>
-      <div className="mb-3">
-        <label for="ip7" className="form-label">Email</label>
-        <input type="email" className="form-control" id="ip7" placeholder="Enter Your Email" />
-      </div>
-      <label for="radio1" className="form-label">I am</label>
-      <div className="form-check">
-        <input className="form-check-input" type="radio" name="radio1" id="radio1" />
-        <label className="form-check-label" for="radio1">Broker</label>
-      </div>
-      <div class="form-check">
-        <input className="form-check-input" type="radio" name="radio1" id="radio2" />
-        <label className="form-check-label" for="radio2"> Commercial Printer</label>
-      </div>
-      <div class="form-check">
-        <input className="form-check-input" type="radio" name="radio1" id="radio3" />
-        <label className="form-check-label" for="radio3"> Graphic Designer</label>
-      </div>
-      <div class="form-check">
-        <input className="form-check-input" type="radio" name="radio1" id="radio4" />
-        <label className="form-check-label" for="radio4"> Advertising Agency</label>
-      </div>
-      <div class="form-check">
-        <input className="form-check-input" type="radio" name="radio1" id="radio5" />
-        <label className="form-check-label" for="radio5"> Other</label>
-      </div>
+    <div>
+      <div className="container">
+        <div className="register">
+          <diV className="total-container">
+            <div className="total-register">
+              <h3 className="total_var">Est. Total&nbsp;:</h3><h4 className="total_value">&nbsp;{Amt}&nbsp;₹</h4>
+            </div>
+          </diV>
+          <div className="head-box">
+            <h1 className="form-heading">Online Quote Request Form</h1>
+            <h5 className="form-hint">Fields marked with <label className="required" /> are required</h5>
+          </div>
+          <form className="myform">
+            <div className="form-element">
+              <label for="ip1" className="Q-form-label">Quotation Id:</label>
+              <input type="number" className="Q-form-input" value={Qid} id="ip15" readOnly />
+            </div>
+            <div className="form-element">
+              <label for="ip1" className="form-label required">Email address</label>
+              <input type="email" className="form-input" id="ip1" placeholder="name@example.com" name="email" value={formvalues.email} onChange={inputChangeHandler} required />
+            </div>
+            <div className="form-element">
+              <label for="ip2" className="form-label required">Company</label>
+              <input type="text" className="form-input" id="ip2" placeholder="Company Name" name="company" value={formvalues.company} onChange={inputChangeHandler} required />
+            </div>
+            <div className="form-element">
+              <label for="ip3" className="form-label required">Address</label>
+              <input type="text" className="form-input" id="ip3" placeholder="Enter your Address" name="address" value={formvalues.address} onChange={inputChangeHandler} required />
+            </div>
+            <div className="form-element">
+              <label for="ip4" className="form-label required">City</label>
+              <input type="text" className="form-input" id="ip4" placeholder="Enter Your City" name="city" value={formvalues.city} onChange={inputChangeHandler} required />
+            </div>
+            <div className="form-element">
+              <label for="ip5" className="form-label required">State</label>
+              <input type="text" className="form-input" id="ip5" placeholder="Enter Your State" name="state" value={formvalues.state} onChange={inputChangeHandler} required />
+            </div>
+            <div className="form-element">
+              <label for="ip6" className="form-label required">PinCode</label>
+              <input type="number" className="form-input" id="ip6" placeholder="Enter Your Pincode" name="pincode" value={formvalues.pincode} onChange={inputChangeHandler} required />
+            </div>
+            <div className="form-element">
+              <label for="radio1" className="form-label  required">I am</label>
+              <div className="form__radio">
+                {IAM.map(result => (
+                  <React.Fragment>
+                    <div className="form-radio-margin">
+                      <input className="form-radio-input" type="radio" id="radio1" name="user_type" value={result} onChange={inputChangeHandler} required />
+                      <label className="form-radio-label" for="radio1">{result}</label>
+                    </div>
+                  </React.Fragment>
+                ))}
 
-      <div className="mb-3">
-        <label for="ip8" className="form-label">Quantities</label>
-        <input type="email" className="form-control" id="ip8" placeholder="Enter Your Quantity" />
+              </div>
+
+            </div>
+
+            <div className="form-element">
+              <label for="ip8" className="form-label  required">Quantities</label>
+              <input type="number" className="form-input" id="ip8" placeholder="Enter Your Quantity" name="quantities" value={formvalues.quantities} onChange={inputChangeHandler} required />
+            </div>
+            <div className="form-element">
+              <label className="form-label required">Label Shape</label>
+              <select class="form-select" aria-label="Default select example" id="LabelShape-select" onChange={select_labelShape} required>
+                <option value="0">-Select-</option>
+                {LabelShape_list.map(result => (
+                  <React.Fragment>
+
+                    <option name="labelShape" value={result}>{result}</option>
+                  </React.Fragment>
+                ))}
+              </select>
+
+            </div>
+            <div className="form-element">
+              <label className="form-label required">Label Width (inches) </label>
+              <select class="form-select" aria-label="Default select example" id="LabelWidth-select" onChange={select_labelWidth} required>
+                <option value="0">-Select-</option>
+                {LabelWidth_list.map(result => (
+                  <React.Fragment>
+
+                    <option name="label_width" value={result}>{result}</option>
+                  </React.Fragment>
+                ))}
+              </select></div>
+            <div className="form-element">
+              <label for="ip9" className="form-label  required">Number of Colors</label>
+              <input type="number" className="form-input" id="ip9" placeholder="colours count" name="colors" value={formvalues.colors} onChange={inputChangeHandler} required />
+            </div>
+            <div className="form-element">
+              <label for="ip14" className="form-label required">Specific Ink Colours </label>
+              <select class="form-select" aria-label="Default select example" id="Ink-select" onChange={select_InkColors} required>
+                <option value="0">-Select-</option>
+                {InkColors_list.map(result => (
+                  <React.Fragment>
+
+                    <option name="colors" value={result}>{result}</option>
+                  </React.Fragment>
+                ))}
+              </select>
+            </div>
+            <div className="form-element">
+              <label for="ip14" className="form-label required">Label Stock  </label>
+              <select class="form-select" aria-label="Default select example" id="LabelStock-select" onChange={select_LabelStock} required>
+                <option value="0">-Select-</option>
+                {labelStock.map(result => (
+                  <React.Fragment>
+
+                    <option name="label_stock" value={result}>{result}</option>
+                  </React.Fragment>
+                ))}
+              </select>
+            </div>
+            <div className="form-element">
+              <label for="radioLam" className="form-label required">Lamination</label>
+              {Lamination.map(result => (
+                <React.Fragment>
+                  <div className="form-radio">
+                    <input className="form-radio-input" type="radio" name="lamination" value={result} onChange={inputChangeHandler} required />
+                    <label className="form-radio-label" for="radioLam">{result}</label>
+                  </div>
+                </React.Fragment>
+              ))}
+            </div>
+
+            <div className="form-element">
+              <label for="env-radio" className="form-label required">Environment</label>
+              {Environment.map(result => (
+                <React.Fragment>
+                  <div className="form-radio">
+                    <input className="form-radio-input" type="radio" name="environment" value={result} onChange={inputChangeHandler} required />
+                    <label className="form-radio-label" for="env-radio">{result}</label>
+                  </div>
+                </React.Fragment>
+              ))}
+            </div>
+            <div class="form-element">
+              <label for="textarea" class="form-label">Special Instructions</label>
+              <textarea class="form-input" id="textarea" rows="4" name="special_instruction" value={formvalues.special_instruction} onChange={inputChangeHandler}></textarea>
+            </div>
+            <button className="submitBtn" style={{ textAlign: "center" }} onClick={submitForm}>Submit</button>
+          </form>
+        </div>
       </div>
-      <select class="form-select" aria-label="Default select example">
-        <label for="ip12" className="form-label">Label Size</label>
-        <option value="0">-Select-</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-      <select class="form-select" aria-label="Default select example">
-        <label for="ip13" className="form-label">Label Width (inches) </label>
-        <option value="0">-Select-</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-      <div className="mb-3">
-        <label for="ip9" className="form-label">Number of Colors</label>
-        <input type="email" className="form-control" id="ip9" placeholder="colours count" />
+      <div className="hint-container">
+        <div className="hint-register">
+          <h1>Label Stock</h1>
+          <h3>Please note:</h3>
+          <h5>This is only a small sampling of available materials. If you do not see something that suits your label application, select ‘other’ and a customer service representative will be in touch with you.</h5>
+          <h3>Semi Gloss with Regular Permanent Adhesive</h3>
+          <h5>This is our most commonly used material for indoor applications. Colours truly pop when printed on Semi Gloss, leaving you with a smooth, high quality label. In addition to it’s attractive qualitities, it’s extremely cost effective.</h5>
+          <h3>2mil Extraclear</h3>
+          <h5>This transparent material has a regular permanent adhesive and a provides a high quality glossy finish. It can be laminated for water resistance, but will not withstand submersion. Suitable for indoor application only.</h5>
+          <h3>3mil White Polylyte</h3>
+          <h5>This is an inexpensive, durable film stock with an attractive pearly shine to it. When laminated, it is resistant to water and chemicals. This stock has a regular permanent adhesive and is not suitable for outdoor use.</h5>
+          <h3>3mil Thermlyte with Drum Adhesive</h3>
+          <h5>This is an extremely durable film stock that is suitable for outdoor use. Drum adheisve is especially suited for metal surfaces, such as drums. When laminated it is resistant to water and chemicals, but will not withstand submersion. Our labels manufactured with this material generally last up to a year in an outdoor environment.</h5>
+          <h3>Bright Foil</h3>
+          <h5>Silver or gold foil label material is a metalized paper with a premium glossy finish. Common applications include specialty address labels, anniversary labels, or any situation in which you would want to make a special impression. Available in silver, or gold. Suitable for indoor use only.</h5>
+          <h3>Dull Foil</h3>
+          <h5>Similar to Bright Foil, Dull Foil is available in silver or gold and has a dull, matte finish. Suitable for indoor use only.</h5>
+        </div>
       </div>
-      <select class="form-select" aria-label="Default select example">
-        <label for="ip14" className="form-label">Specific Ink Colours </label>
-        <option value="0">-Select-</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-      <select class="form-select" aria-label="Default select example">
-        <label for="ip14" className="form-label">Label Stock  </label>
-        <option value="0">-Select-</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-      <label for="radio1" className="form-label">Lamination</label>
-      <div className="form-check">
-        <input className="form-check-input" type="radio" name="radio2" id="radio1" />
-        <label className="form-check-label" for="radio1">Yes</label>
-      </div>
-      <div class="form-check">
-        <input className="form-check-input" type="radio" name="radio2" id="radio2" />
-        <label className="form-check-label" for="radio2"> No</label>
-      </div>
-      <label for="radio1" className="form-label">Environment</label>
-      <div className="form-check">
-        <input className="form-check-input" type="radio" name="radio3" id="radio1" />
-        <label className="form-check-label" for="radio1">Indoor</label>
-      </div>
-      <div class="form-check">
-        <input className="form-check-input" type="radio" name="radio3" id="radio2" />
-        <label className="form-check-label" for="radio2">Outdoor</label>
-      </div>
-      <div class="mb-3">
-        <label for="textarea" class="form-label">Special Instructions</label>
-        <textarea class="form-control" id="textarea" rows="3"></textarea>
-      </div>
-      <button className="btn btn-info">Submit</button>
     </div>
   );
 }

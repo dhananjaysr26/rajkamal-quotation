@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
 import QEditor from "./components/QuotationEditor";
+import Admin from "./components/Admin";
 function App() {
   return (
     <div className="App">
@@ -12,6 +13,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/quotation-editor" component={QEditor} />
+          <Route path="/admin" component={Admin} />
         </Switch>
 
       </Router>

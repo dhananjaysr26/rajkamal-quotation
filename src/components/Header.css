@@ -104,7 +104,7 @@ a:hover {
 }
 @media (max-width: 960px) {
   .logo {
-    font-size: 20px;
+    font-size: 25px;
   }
   .navBar #menuIcon {
     display: block;
@@ -118,6 +118,7 @@ a:hover {
     text-align: center;
   }
   .nav__links.active {
+    scroll-behavior: unset;
     transition: all 0.5s ease;
     opacity: 1;
     left: 0;
