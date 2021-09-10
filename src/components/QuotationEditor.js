@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import "./QuotationEditor.css";
+import { useHistory } from "react-router-dom";
+import firebase from "./Firebase";
+import emailjs from "emailjs-com";
 function QuotationEditor(props) {
+  let history = useHistory();
   //getting props
   // var Qid = props.location.statel
   var Qid = 77779;
@@ -62,15 +66,31 @@ function QuotationEditor(props) {
     })
 
   }
-  const submitForm = () => {
+  const submitForm = (e) => {
     setFormvalues({
-      ...formvalues, quotaion_id: { Qid }
+      ...formvalues, quotaion_id: Qid
     })
-    console.log("Helooo");
-    console.log(formvalues);
+    setFormvalues({
+      ...formvalues, estAmt: "7000"
+    })
 
-    alert("Data Saved!");
-  }
+    e.preventDefault();
+    emailjs.sendForm('service_35hhill', 'template_prywkna', e.target, 'user_0M8WtJhXCYbJIxLRvbOlb')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+    alert("Email Sent");
+    const firestore = firebase.database().ref("/QuotRequest");
+    let data = formvalues;
+    firestore.push(data);
+    console.log("!User Submit Data!");
+    console.log(formvalues);
+    alert("Request Has Been Submited Successfully!\nWe will Connect you Soon!");
+    history.push("/");
+  };
+
   //Radio Button
   let IAM = ["Broker", "Commercial Printer", "Graphic Designer", "Adertising Agency", "Other"];
   let Lamination = ["Yes", "No"];
@@ -187,7 +207,7 @@ function QuotationEditor(props) {
             <h1 className="form-heading">Online Quote Request Form</h1>
             <h5 className="form-hint">Fields marked with <label className="required" /> are required</h5>
           </div>
-          <form className="myform">
+          <form className="myform" onSubmit={submitForm}>
             <div className="form-element">
               <label for="ip1" className="Q-form-label">Quotation Id:</label>
               <input type="number" className="Q-form-input" value={Qid} id="ip15" readOnly />
@@ -315,7 +335,7 @@ function QuotationEditor(props) {
               <label for="textarea" class="form-label">Special Instructions</label>
               <textarea class="form-input" id="textarea" rows="4" name="special_instruction" value={formvalues.special_instruction} onChange={inputChangeHandler}></textarea>
             </div>
-            <button className="submitBtn" style={{ textAlign: "center" }} onClick={submitForm}>Submit</button>
+            <button className="submitBtn" style={{ textAlign: "center" }} >Submit</button>
           </form>
         </div>
       </div>

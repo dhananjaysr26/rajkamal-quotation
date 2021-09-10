@@ -12,6 +12,9 @@
   font-size: 40px;
   font-weight: 700;
 }
+.logo-image {
+  cursor: pointer;
+}
 .content p {
   font-size: 30px;
   font-weight: 500;
@@ -36,6 +39,7 @@
 .homeBtn:hover {
   border-color: rgba(255, 255, 255, 1);
   color: black;
+  font-weight: 700;
 }
 .homeBtn-box {
   margin-top: 2rem;

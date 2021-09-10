@@ -1,0 +1,94 @@
+.admin-container {
+  width: 100%;
+  display: flex;
+  margin-top: 10px;
+}
+.admin-window {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.card-container {
+  width: 90%;
+  margin: 50px auto;
+}
+.card-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow: wrap;
+  border-radius: 10px;
+}
+
+.card {
+  width: 20%;
+  background: #fff;
+  border: 1px solid #ccc;
+  margin-bottom: 50px;
+  transition: 0.3s;
+  border-radius: 10px;
+}
+
+.card-header {
+  text-align: center;
+  padding: 50px 10px;
+  background: linear-gradient(
+    90deg,
+    rgba(9, 121, 105, 1) 35%,
+    rgba(0, 155, 255, 1) 100%
+  );
+  color: #fff;
+  border-radius: 10px;
+}
+
+.card-body {
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 18px;
+  color: black;
+}
+
+.card-body .btn {
+  display: block;
+  color: #fff;
+  text-align: center;
+  background: rgb(9, 107, 121);
+  margin-top: 30px;
+  text-decoration: none;
+  padding: 10px 5px;
+  border-radius: 10px;
+}
+.card-body .btn:hover {
+  background: rgb(15, 158, 180);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 1000px) {
+  .card {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .container {
+    width: 100%;
+  }
+
+  .heading {
+    padding: 20px;
+    font-size: 20px;
+  }
+
+  .card {
+    width: 80%;
+  }
+}

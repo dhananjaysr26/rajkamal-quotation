@@ -8,33 +8,34 @@ function Home() {
     let history = useHistory();
     function editQuotationBtn() {
         var Qid = prompt("Please enter your Quotation ID:");
-        if (Qid != null) {
+        if (Qid === "") {
+            alert("Sorry! Quotation Id Require For this Action!");
+        } else if (Qid === null) {
+        }
+        else {
             history.push({
                 pathname: '/quotation-editor',
                 state: Qid
             });
         }
     }
+    function createQuotationBtn() {
+        history.push("/quotation-editor");
+    }
     return (
 
         <div className="content">
-            <img src={logoPic} alt="" />
-
+            <img className="logo-image" src={logoPic} alt="" />
             <div className="title">Welcome To Rajkamal Barscan</div>
             <p>Estimate Your <span class="type">Quotation <span> Now!</span></span></p>
             <div className="homeBtn-box">
                 <button className="homeBtn bouncy" type="submit" onClick={editQuotationBtn}>Edit Quotation</button>
-
-
-                <Link to="/quotation-editor">
-                    <button className="homeBtn bouncy" style={{ backgroundColor: "#f58442", animationDelay: "0.14s" }} type="submit">
-                        Create Quotation
-                    </button>
-                </Link>
-
+                <button className="homeBtn bouncy" style={{ marginLeft: "10px", backgroundColor: "#f58442", animationDelay: "0.14s" }} type="submit" onClick={createQuotationBtn}>
+                    Create Quotation
+                </button>
             </div>
             <section class="portfolio-experiment">
-                <Link to="/quotation-editor">
+                <Link to="/know-more">
                     <span class="text">Know More!</span>
                     <span class="line -right"></span>
                     <span class="line -top"></span>
