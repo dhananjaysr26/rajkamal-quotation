@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import QEditor from "./components/QuotationEditor";
 import Admin from "./components/Admin";
 import KnowMore from "./components/KnowMore";
+import QuoteDetails from "./components/QuoteDetails";
 function App() {
   return (
     <div className="App">
@@ -16,6 +17,7 @@ function App() {
           <Route path="/quotation-editor" component={QEditor} />
           <Route path="/know-more" component={KnowMore} />
           <Route path="/admin" component={Admin} />
+          <Route path="/quote-details" component={QuoteDetails} />
         </Switch>
       </Router>
     </div>

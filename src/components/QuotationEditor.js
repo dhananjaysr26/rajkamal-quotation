@@ -6,7 +6,7 @@ import emailjs from "emailjs-com";
 function QuotationEditor(props) {
   let history = useHistory();
   //getting props
-  // var Qid = props.location.statel
+  // var Qid = props.location.state
   var Qid = 77779;
   const initial_valueObj = {
     quotaion_id: "",

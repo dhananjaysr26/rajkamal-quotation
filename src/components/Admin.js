@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import firebase from "./Firebase";
+import { useHistory } from "react-router-dom";
 import "./Admin.css";
 const Admin = () => {
+    let history = useHistory();
     const [quoteData, setquoteData] = useState([]);
     useEffect(() => {
         const firestore = firebase.database().ref("/QuotRequest");
@@ -55,7 +57,13 @@ const Admin = () => {
                                     <div className="card-body">
                                         <p>Quotation id : {data.quotaion_id}</p>
                                         <p>Label Stock: T1 Bar</p>
-                                        <a href="#" className="btn">View Details</a>
+                                        <p>{data.id}</p>
+                                        <a href="" onClick={() => {
+                                            history.push({
+                                                pathname: '/quote-details',
+                                                state: data.id
+                                            });
+                                        }} className="btn">View Details</a>
                                     </div>
                                 </div>
                             )
@@ -71,4 +79,4 @@ const Admin = () => {
     )
 }
 
-export default Admin
+export default Admin;
